@@ -134,22 +134,6 @@
             background-color: rgba(230, 0, 0, 0.15);
         }
 
-        /* CORREÇÃO: Estilo para o link de pacotes no menu desktop */
-        .desktop-menu-item.packages-link {
-            font-weight: bold;
-            background-color: rgba(0, 102, 204, 0.1);
-            border: 1px solid rgba(0, 102, 204, 0.2);
-            margin-left: 5px;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .desktop-menu-item.packages-link:hover {
-            background-color: rgba(0, 102, 204, 0.15);
-            color: #0066cc;
-        }
-
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -240,18 +224,6 @@
             color: #e60000;
             font-weight: bold;
             background-color: rgba(230, 0, 0, 0.05);
-        }
-
-        /* CORREÇÃO: Estilo para o link de pacotes no menu lateral */
-        .menu-item.packages-link {
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-        }
-
-        /* REMOVIDO O ESTILO DO ÍCONE DO MENU */
-        .menu-item-icon {
-            display: none;
         }
 
         /* ESTILO ESPECÍFICO PARA "CONSULTAR SUA RESERVA" EM NEGRITO */
@@ -938,90 +910,112 @@
             line-height: 1.4;
         }
 
-        /* Nova seção "Pacotes de Viagens Personalizados" */
-        .packages-section {
-            background-color: white;
+        /* NOVA SEÇÃO: Aviso para seguir no Instagram */
+        .instagram-warning {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
             margin: 20px;
-            padding: 40px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .packages-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #1a1a1a;
             text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .packages-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .packages-column {
+            font-weight: bold;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .packages-subtitle {
-            font-size: 20px;
+        .instagram-warning::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .instagram-title {
+            font-size: 24px;
             font-weight: bold;
-            color: #e60000;
             margin-bottom: 10px;
-        }
-
-        .packages-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .packages-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .packages-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
             display: flex;
             align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
         }
 
-        .packages-list li:before {
-            content: "✓";
-            color: #e60000;
-            font-weight: bold;
-            margin-right: 10px;
+        .instagram-icon {
+            font-size: 28px;
         }
 
-        /* CORREÇÃO: Botão como link para pacotes.html */
-        .packages-button {
-            background-color: #e60000;
-            color: white;
+        .instagram-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .seasons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .season {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .instagram-button {
+            background-color: white;
+            color: #E1306C;
             border: none;
-            border-radius: 0;
-            padding: 15px 30px;
-            font-size: 18px;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
+            transition: all 0.3s;
             text-decoration: none;
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .packages-button:hover {
-            background-color: #cc0000;
+        .instagram-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            background-color: #f8f8f8;
         }
 
         /* Nova seção "Sobre a BIXX PASSAGENS" */
@@ -1259,7 +1253,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .packages-content, .about-content {
+            .about-content {
                 grid-template-columns: 1fr;
             }
 
@@ -1286,6 +1280,29 @@
 
             .variation-text {
                 font-size: 13px;
+            }
+
+            /* Ajustes para o aviso do Instagram */
+            .instagram-warning {
+                margin: 10px;
+                padding: 20px 15px;
+            }
+
+            .instagram-title {
+                font-size: 20px;
+            }
+
+            .instagram-text {
+                font-size: 14px;
+            }
+
+            .seasons {
+                gap: 10px;
+            }
+
+            .season {
+                padding: 6px 12px;
+                font-size: 12px;
             }
         }
 
@@ -1322,17 +1339,37 @@
                 width: 100%;
             }
 
-            .packages-section, .about-section {
+            .about-section {
                 margin: 10px;
                 padding: 20px 15px;
             }
 
-            .packages-title, .about-title {
+            .about-title {
                 font-size: 24px;
             }
 
             .footer {
                 padding: 30px 15px;
+            }
+
+            .instagram-warning {
+                padding: 15px 10px;
+            }
+
+            .instagram-title {
+                font-size: 18px;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .instagram-text {
+                font-size: 13px;
+            }
+
+            .seasons {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
             }
         }
 
@@ -1503,10 +1540,6 @@
             <div class="menu-item active">
                 <span>Início</span>
             </div>
-            <!-- CORREÇÃO: Link para pacotes.html no menu lateral -->
-            <a href="pacotes.html" class="menu-item packages-link">
-                <span>Pacotes Personalizados</span>
-            </a>
             <div class="menu-item reservation">
                 <span>Consultar sua reserva</span>
             </div>
@@ -1524,12 +1557,10 @@
             <span class="logo-text">BIXX PASSAGENS</span>
         </div>
 
-        <!-- Menu desktop - CORRIGIDO -->
+        <!-- Menu desktop - SIMPLIFICADO -->
         <nav class="desktop-menu">
             <ul class="desktop-menu-items">
                 <li class="desktop-menu-item active">Início</li>
-                <!-- CORREÇÃO: Link para pacotes.html no menu desktop -->
-                <a href="pacotes.html" class="desktop-menu-item packages-link">Pacotes personalizados com o nosso especialista!</a>
                 <li class="desktop-menu-item reservation">Consultar sua reserva</li>
             </ul>
         </nav>
@@ -1720,44 +1751,26 @@
         </div>
     </div>
 
-    <!-- Nova seção "Pacotes de Viagens Personalizados" -->
-    <div class="packages-section">
-        <h2 class="packages-title">Pacotes de Viagens Personalizados para qualquer lugar do Brasil</h2>
-        <div class="packages-content">
-            <div class="packages-column">
-                <div class="packages-item">
-                    <h3 class="packages-subtitle">Por que Escolher Nossos Pacotes?</h3>
-                    <p class="packages-text">
-                        Na BIXX PASSAGENS, entendemos que cada viajante tem necessidades únicas. Por isso, 
-                        oferecemos pacotes personalizados que se adaptam ao seu estilo, orçamento e preferências.
-                    </p>
-                    <ul class="packages-list">
-                        <li>Destinos em todo o território nacional</li>
-                        <li>Combinações flexíveis de voos e hospedagem</li>
-                        <li>Opções para todos os tipos de viajantes</li>
-                        <li>Assessoria personalizada do planejamento à viagem</li>
-                        <li>Condições especiais para grupos e famílias</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="packages-column">
-                <div class="packages-item">
-                    <h3 class="packages-subtitle">Como Funciona?</h3>
-                    <p class="packages-text">
-                        Nossos especialistas em viagem estão prontos para criar o pacote perfeito para você:
-                    </p>
-                    <ul class="packages-list">
-                        <li>Conte-nos seu destino dos sonhos e datas</li>
-                        <li>Informe seu orçamento e preferências</li>
-                        <li>Receba uma proposta personalizada em até 24h</li>
-                        <li>Ajuste os detalhes conforme sua necessidade</li>
-                        <li>Feche o pacote com as melhores condições</li>
-                    </ul>
-                    <!-- CORREÇÃO: Botão como link para pacotes.html -->
-                    <a href="pacotes.html" class="packages-button">SOLICITAR PACOTE PERSONALIZADO</a>
-                </div>
-            </div>
+    <!-- NOVA SEÇÃO: Aviso para seguir no Instagram -->
+    <div class="instagram-warning">
+        <div class="instagram-title">
+            <span class="instagram-icon">📱</span>
+            SIGA-NOS NO INSTAGRAM!
+            <span class="instagram-icon">📱</span>
         </div>
+        <div class="instagram-text">
+            Fique por dentro das nossas promoções exclusivas e códigos promocionais que variam de acordo com a estação do ano!
+        </div>
+        <div class="seasons">
+            <div class="season">🌺 PRIMAVERA</div>
+            <div class="season">☀️ VERÃO</div>
+            <div class="season">🍂 OUTONO</div>
+            <div class="season">❄️ INVERNO</div>
+        </div>
+        <a href="https://instagram.com" target="_blank" class="instagram-button">
+            <span>@BIXXPASSAGENS</span>
+            <span>➡️</span>
+        </a>
     </div>
 
     <!-- Nova seção "Sobre a BIXX PASSAGENS" -->
@@ -1878,8 +1891,6 @@
                     
                     imgElement.onerror = function() {
                         console.warn('Erro ao carregar imagem:', url);
-                        // Fallback para imagem padrão se necessário
-                        // imgElement.src = 'default-logo.png';
                     };
                 }
             }
@@ -2986,8 +2997,6 @@
                 
                 message += `*${title}:* ${cityNames[data.origem] || data.origem} → ${cityNames[data.destino] || data.destino}\n`;
                 
-                // ATUALIZADO: Removida a linha da companhia
-                
                 // Adicionar informações de datas - USANDO A FUNÇÃO CORRIGIDA
                 if (partida) {
                     message += `*Data de Partida:* ${formatDisplayDate(partida)}\n`;
@@ -3014,7 +3023,6 @@
                 
                 message += `\n*Informações da Consulta:*\n`;
                 message += `• ID da consulta: ${data.id}\n`;
-                // ATUALIZADO: Removidas as linhas de preço e promoção
                 
                 message += `\nGostaria de confirmar disponibilidade, preços atualizados e opções de personalização.`;
                 
@@ -3030,9 +3038,6 @@
                 // Abrir WhatsApp em uma nova aba
                 window.open(whatsappUrl, '_blank');
             };
-
-            // ========== FUNÇÃO REMOVIDA: consultPackages NÃO É MAIS NECESSÁRIA ==========
-            // O botão agora é um link direto para pacotes.html
         });
     </script>
 </body>
